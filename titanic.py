@@ -32,7 +32,7 @@ n_survived_patch = mpatches.Patch(color='#F08080', label='Not Survived')
 missing_age = data[data['Age'].isnull()]['PassengerId']
 
 
-# DISTRIBUTION OF PASSENGERS ON BASIS OF AGE GROUP #
+# SURVIVAL RATE OF PASSENGERS ON BASIS OF AGE GROUP #
 
 range_age = np.arange(0, max(data['Age'])+1, 10)
 plt.hist(data['Age'], range_age, histtype='bar', rwidth=0.5, alpha=0.5, color='#F08080', label='Total')
@@ -49,7 +49,7 @@ for i in range_age[:-1]:
     survived_age.append(len(a['Survived']))
 
 
-# PIE CHART FOR PROPORTION OF MALES AND FEMALES #
+# PIE CHART FOR PROPORTION OF MALES AND FEMALES SURVIVAL RATE #
 
 
 label_mf = ['Males', 'Females']
@@ -99,7 +99,7 @@ fig1.legend(labels_sur_class, loc='lower center')
 fig1.show()
 
 
-# FARE PAID TO AGE TO SURVIVAL RATE #
+# FARE PAID AND AGE COMPARED TO SURVIVAL RATE #
 
 s_patch = mpatches.Patch(color='#006400', label='Survived', alpha=0.5)
 n_patch = mpatches.Patch(color='#DC143C', label='Not Survived', alpha=0.5)
