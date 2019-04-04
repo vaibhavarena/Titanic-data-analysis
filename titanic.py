@@ -72,7 +72,7 @@ plt.tight_layout()
 plt.show()
 
 
-# -->  Try like the above code TRAVELLING CLASS TO SURVIVAL RATE #
+# SURVIVAL BASED ON TRAVELLING CLASS OF PASSENGERS #
 
 class1 = len(data[data['Pclass'] == 1])
 class2 = len(data[data['Pclass'] == 2])
