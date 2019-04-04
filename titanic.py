@@ -86,6 +86,15 @@ c1_sur3_n = len(data[(data['Pclass'] == 3) & (data['Survived'] == 0)])
 
 labels_sur_class = ['Survived', 'Not Survived']
 fig1 = plt.figure(figsize=(13, 5))
+
+rectangle = plt.Rectangle((0, 0), 1, 1, alpha=0.5, fc='#D3D3D3', color='black', linewidth=1)
+fig1 = plt.gcf()
+fig1.gca().add_artist(rectangle)
+fig1.gca().set_xticks([])
+fig1.gca().set_xticklabels([])
+fig1.gca().set_yticks([])
+fig1.gca().set_yticklabels([])
+
 ax_1 = fig1.add_subplot(131)
 ax_1.pie([c1_sur1, c1_sur1_n], colors=['#3CB371', '#F08080'], radius=1.2)
 ax_1.set_title('Class 1')
@@ -95,8 +104,9 @@ ax_2.set_title('Class 2')
 ax_3 = fig1.add_subplot(133)
 ax_3.pie([c1_sur3, c1_sur3_n], colors=['#3CB371', '#F08080'], radius=1.2)
 ax_3.set_title('Class 3')
+
 fig1.legend(labels_sur_class, loc='lower center')
-fig1.show()
+plt.show()
 
 
 # FARE PAID AND AGE COMPARED TO SURVIVAL RATE #
@@ -114,6 +124,6 @@ ax1.set_ylabel('Age ->', fontweight='bold')
 ax2 = fig.add_subplot(121, sharex=ax1, sharey=ax1)
 ax2.scatter(data[criteria_total_n]['Fare'], data[criteria_total_n]['Age'], color='#DC143C', s=5, alpha=0.5)
 ax2.legend(handles=[n_patch])
-ax2.set_xlabel('Fare ->', fontweight='bold')#
+ax2.set_xlabel('Fare ->', fontweight='bold')
 ax2.set_ylabel('Age ->', fontweight='bold')
 plt.show()
